@@ -47,7 +47,7 @@ def enviar_correo(destino, nombre, usuario, password_usuario):
 
                 </div>
               <div style="text-align:center; margin:30px 0;">
-                <a href="http://45.163.19.133/virtualUpgm/" target="_blank" rel="noopener noreferrer"
+                <a href="http://45.163.19.133/virtualUpgm/login/" target="_blank" rel="noopener noreferrer"
                   style="background-color:#0056b3; color:#ffffff; padding:14px 28px; text-decoration:none; border-radius:6px; font-weight:600; display:inline-block; font-size:16px; box-shadow: 0 4px 12px rgba(0,86,179,0.4); transition: background-color 0.3s ease;">
                   🔐 Ingresar a la plataforma
                 </a>
@@ -86,7 +86,7 @@ def enviar_correo(destino, nombre, usuario, password_usuario):
 
 
 def enviar_credenciales():
-    df = pd.read_csv("usuarios_FBC_prueba.csv", sep = ';')
+    df = pd.read_csv("usuarios_REENVIAR 2026.csv", sep = ',')
 
     print(df)
     resultados = []
@@ -104,7 +104,7 @@ def enviar_credenciales():
 
     df["estado_envio"] = resultados
 
-    df.to_csv("reporte_envios.csv", index=False)
+    df.to_csv("reporte_envios2.csv", index=False)
 
     print("Proceso terminado")
 
