@@ -42,7 +42,7 @@ def procesar(df):
     
     
     #Separar nombres
-    partes = df['APELLIDOS Y NOMBRES '].str.split(' ', n=2, expand = True)
+    partes = df['APELLIDOS Y NOMBRES'].str.split(' ', n=2, expand = True)
     df['APELLIDO_PATERNO'] = partes[0]
     df['APELLIDO_MATERNO'] = partes[1]
     df['NOMBRES'] = partes[2]
@@ -62,12 +62,12 @@ def procesar(df):
     #Corregir Emails . . .
     dfCsv['email']=df['CORREO'].apply(corregirEmail)
     
-    #Curso
-    course ='MAE_FORENSE-BF-vXXII2026'
+    #Curso  MAE_ENF/TERAPIA-OUTI-vXIV2026
+    course ='MAE_SP-GERENCIA-FSP-vXXIV2026'
     dfCsv['course1']=course    
     
     #Exportar a csv
-    dir=r"C:\Users\usuario\Desktop\Code\output\usuarios_RESGITRO MAE TERAPIA 2026.csv"
+    dir=r"OUTPUT\usuarios_GERENCIA 2026.csv"
     dfCsv.to_csv(dir, index=False, encoding='utf-8-sig')
 
     print("CSV generado exitosamente: usuarios_limpios.csv")
@@ -77,7 +77,7 @@ def procesar(df):
    
     
 def main():
-    dirArchivo = r"C:\Users\usuario\Desktop\Code\Input\RESGITRO MAE TERAPIA 2026.xlsx"
+    dirArchivo = r"INPUT\GERENCIA 2026.xlsx"
     
     procesar(leerArchivo(dirArchivo))
 

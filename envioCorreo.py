@@ -46,12 +46,31 @@ def enviar_correo(destino, nombre, usuario, password_usuario):
                   </div>
 
                 </div>
-              <div style="text-align:center; margin:30px 0;">
-                <a href="http://45.163.19.133/virtualUpgm/login/" target="_blank" rel="noopener noreferrer"
-                  style="background-color:#0056b3; color:#ffffff; padding:14px 28px; text-decoration:none; border-radius:6px; font-weight:600; display:inline-block; font-size:16px; box-shadow: 0 4px 12px rgba(0,86,179,0.4); transition: background-color 0.3s ease;">
-                  🔐 Ingresar a la plataforma
-                </a>
-              </div>
+                          <!-- BOTÓN PRINCIPAL MEJORADO -->
+                <table align="center" cellpadding="0" cellspacing="0" style="margin:30px auto;">
+                  <tr>
+                    <td align="center" style="border-radius:8px; background: linear-gradient(90deg, #003366, #0056b3); box-shadow: 0 4px 10px rgba(0,51,102,0.3);">
+                      <a href="http://45.163.19.133/virtualUpgm/login/"
+                         target="_blank"
+                         style="font-size:16px; font-family: Arial, sans-serif; color:#ffffff; text-decoration:none; padding:14px 30px; display:inline-block; font-weight:600;">
+                        🔐 Ingresar a la plataforma
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- BOTÓN TUTORIAL ESTILO COMPLEMENTARIO -->
+                <table align="center" cellpadding="0" cellspacing="0" style="margin-bottom:20px;">
+                  <tr>
+                    <td align="center" style="border-radius:8px; border:2px solid #0056b3;">
+                      <a href="https://www.tiktok.com/@upgumsa/video/7619077920568397057"
+                         target="_blank"
+                         style="font-size:14px; font-family: Arial, sans-serif; color:#0056b3; text-decoration:none; padding:12px 26px; display:inline-block; font-weight:600;">
+                        ▶ Ver tutorial de acceso
+                      </a>
+                    </td>
+                  </tr>
+                </table>	  
               <p style="font-size:13px; color:#666666; text-align:center;">
                 Si tiene problemas para acceder, contacte al área de sistemas: <a href="https://wa.me/59173597267" target="_blank" style="color:#0056b3; text-decoration:none;">Sistemas Upgm</a>
               </p>
@@ -86,7 +105,7 @@ def enviar_correo(destino, nombre, usuario, password_usuario):
 
 
 def enviar_credenciales():
-    df = pd.read_csv("usuarios_REENVIAR 2026.csv", sep = ',')
+    df = pd.read_csv("enviarCorreoUsuarios.csv", sep = ',')
 
     print(df)
     resultados = []
@@ -104,7 +123,7 @@ def enviar_credenciales():
 
     df["estado_envio"] = resultados
 
-    df.to_csv("reporte_envios2.csv", index=False)
+    df.to_csv("reporte_envios_usuarios.csv", index=False)
 
     print("Proceso terminado")
 
